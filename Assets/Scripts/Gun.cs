@@ -12,6 +12,8 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private Transform bulletSpawnPos;
 
+    [SerializeField] private Transform aim;
+
     
     private void Awake()
     {
@@ -24,6 +26,7 @@ public class Gun : MonoBehaviour
         isCanShoot = false;
         GameObject spawnBullet = Instantiate(bullet, bulletSpawnPos.position, bullet.transform.rotation);
         spawnBullet.transform.parent = bulletsParent.transform;
+        spawnBullet.GetComponent<Bullet>().Aim = aim;
         StartCoroutine(Coroutine());
     }
 
