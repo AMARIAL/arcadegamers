@@ -26,7 +26,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9424a6d-b22e-4ac2-84b0-7b882c08b0e2" name="Default Changelist" comment="" />
+    <list default="true" id="b9424a6d-b22e-4ac2-84b0-7b882c08b0e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.arcadegamers/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.arcadegamers/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.arcadegamers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.arcadegamers/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,11 +38,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RotateGun.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Bullet.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Gun.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RotateGun.cs" />
       </list>
     </option>
   </component>
@@ -83,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695402071179</updated>
-      <workItem from="1695402095904" duration="3949000" />
+      <workItem from="1695402095904" duration="5648000" />
     </task>
     <servers />
   </component>
@@ -127,5 +134,9 @@
       <screen x="-1920" y="-253" width="1920" height="1040" />
     </state>
     <state x="-1828" y="-161" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040/-1920.-253.1920.1040@-1920.-253.1920.1040" timestamp="1695404335401" />
+    <state x="-1304" y="114" key="run.anything.popup" timestamp="1695407468168">
+      <screen x="-1920" y="-253" width="1920" height="1040" />
+    </state>
+    <state x="-1304" y="114" key="run.anything.popup/0.0.1920.1040/-1920.-253.1920.1040@-1920.-253.1920.1040" timestamp="1695407468168" />
   </component>
 </project>
