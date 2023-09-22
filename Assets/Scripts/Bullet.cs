@@ -6,10 +6,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Vector3 _direction;
-    private Camera _cam;
     private Rigidbody2D _rb;
     [SerializeField] private float _speed = 100.0f;
-    [SerializeField] private Vector3 _camOffset;
+    public Transform Aim;
 
     private void Awake()
     {
@@ -18,8 +17,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        _cam = Camera.main;
-        _direction = (_cam.ScreenToWorldPoint(Input.mousePosition) + _camOffset - transform.position).normalized;
+        _direction = (Aim.position - transform.position).normalized;
         _rb.AddForce(_direction * _speed);
     }
 
