@@ -978,7 +978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   egg: {fileID: 6708070302190379376, guid: 01397a4df5289d04892fa14dc2705d87, type: 3}
   isSpawn: 1
-  coolDown: 1
+  coolDown: 2
 --- !u!1 &728560471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   egg: {fileID: 6708070302190379376, guid: 01397a4df5289d04892fa14dc2705d87, type: 3}
   isSpawn: 1
-  coolDown: 1
+  coolDown: 2
 --- !u!4 &1513729487
 Transform:
   m_ObjectHideFlags: 0
@@ -1798,7 +1798,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 7f2aa7fc44092c943be48048bdc771a7, type: 2}
+  m_Material: {fileID: 6200000, guid: e3be452dc7cb0a1418776f160fd2b4c5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
