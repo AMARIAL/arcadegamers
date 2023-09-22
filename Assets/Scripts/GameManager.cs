@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    void Start()
+    public static GameManager ST {get; private set;}
+    void Awake()
     {
-        
+        ST = this;
     }
     
 }
