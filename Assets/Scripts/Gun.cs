@@ -7,40 +7,35 @@ public class Gun : MonoBehaviour
     public bool isCanShoot;
     public float coolDown;
     private Rigidbody2D rb;
-    [SerializeField] private GameObject egg;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bulletsParent;
+    [SerializeField]
+    private Transform bulletSpawnPos;
 
     
-    void Awake()
+    private void Awake()
     {
         ST = this;
         rb = GetComponent<Rigidbody2D>();
     }
-    void Start()
-    {
-        StartCoroutine(Coroutine("CoolDown"));
-    }
 
     public void Shoot()
     {
-        
+        isCanShoot = false;
+        GameObject spawnBullet = Instantiate(bullet, bulletSpawnPos.position, bullet.transform.rotation);
+        spawnBullet.transform.parent = bulletsParent.transform;
+        StartCoroutine(Coroutine());
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && isCanShoot)
+            Shoot();
     }
 
-    private IEnumerator Coroutine (string name)
+    private IEnumerator Coroutine ()
     {
-        switch (name)
-        {
-            case "CoolDown":
-                while (!isCanShoot)
-                {
-                    yield return new WaitForSeconds(coolDown);
-                    isCanShoot = true;
-                }
-                break;
-        }
-        yield break;
+        yield return new WaitForSeconds(coolDown);
+                isCanShoot = true;
     }
 }
