@@ -801,9 +801,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a4a27273530364899501f7db50fb2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCanShoot: 0
-  coolDown: 0
-  egg: {fileID: 0}
+  isCanShoot: 1
+  coolDown: 3
+  bullet: {fileID: 2491803763097809615, guid: df3451d700da6f44fbd62cdac931e15d, type: 3}
+  bulletsParent: {fileID: 0}
+  bulletSpawnPos: {fileID: 0}
 --- !u!1 &612115923
 GameObject:
   m_ObjectHideFlags: 0
