@@ -39,6 +39,7 @@ public class Gun : MonoBehaviour
     private IEnumerator Coroutine ()
     {
         yield return new WaitForSeconds(coolDown);
-                isCanShoot = true;
+        isCanShoot = true;
+        yield break;
     }
 }

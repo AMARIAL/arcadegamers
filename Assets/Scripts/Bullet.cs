@@ -26,4 +26,14 @@ public class Bullet : MonoBehaviour
         if(transform.position.y > 10.0f)
             Destroy(gameObject);
     }
+    
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Egg"))
+        {
+            Destroy(gameObject);
+            other.gameObject.GetComponent<Egg>().Hit(10);
+        }
+    }
 }

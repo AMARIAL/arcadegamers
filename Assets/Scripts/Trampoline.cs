@@ -8,6 +8,8 @@ public class Trampoline : MonoBehaviour
     
     [Header("Параметры")]
     [SerializeField] public float speed = 7.0f;
+    [SerializeField] public float minPos = -2.88f;
+    [SerializeField] public float maxPos = 0.91f;
     void Awake()
     {
         ST = this;
@@ -21,11 +23,11 @@ public class Trampoline : MonoBehaviour
     {
         Vector2 direction = Vector2.zero;
         
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && transform.position.x > minPos)
         {
             direction.x = -1;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) && transform.position.x < maxPos)
         {
             direction.x = 1;
             

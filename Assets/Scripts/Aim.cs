@@ -5,6 +5,7 @@ using UnityEngine;
 public class Aim : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Vector2 oldPos;
     
     public static Aim ST  {get; private set;} // Audio.ST (Singltone)
     private void Awake()
@@ -18,9 +19,19 @@ public class Aim : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+
         Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        rb.MovePosition(pos);
+        
+        if (oldPos != pos)
+        {
+            Vector2 aimPos = new Vector2(-transform.position.x + pos.x - oldPos.x, transform.position.y - pos.y + oldPos.y);
+        
+            rb.MovePosition(aimPos);
+            // transform.position     oldPos      pos
+            oldPos = pos;
+        }
+
     }
 }
