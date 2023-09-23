@@ -13,6 +13,7 @@
           <e p="EggsGenerator.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="Gun.cs" t="Include" />
+          <e p="RotateGun.cs" t="Include" />
           <e p="Trampoline.cs" t="Include" />
         </e>
       </e>
