@@ -9,6 +9,7 @@ public class Egg : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         rand = Random.Range(-100.0f, -300.0f);
+        GameManager.ST.AddEgg(false);
     }
     
     void Update()
@@ -21,10 +22,15 @@ public class Egg : MonoBehaviour
     public void Hit(int val)
     {
         GameManager.ST.AddPoints(val);
-        if(val > 0)
+        if (val > 0)
+        {
+            GameManager.ST.AddEgg(true);
             EggsGenerator.ST.Blood(transform.position,true);
+        }
+            
         else 
             EggsGenerator.ST.Blood(transform.position,false);
+        Audio.ST.PlaySound(Sounds.egg);
         Destroy(gameObject);
     }
     

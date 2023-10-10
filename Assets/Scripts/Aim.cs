@@ -26,10 +26,10 @@ public class Aim : MonoBehaviour
         
         if (oldPos != pos)
         {
-            Vector2 aimPos = new Vector2(-transform.position.x + pos.x - oldPos.x, transform.position.y - pos.y + oldPos.y);
+            Vector2 aimPos = (Vector2)transform.position + pos - oldPos;
         
             rb.MovePosition(aimPos);
-            // transform.position     oldPos      pos
+        
             oldPos = pos;
         }
 

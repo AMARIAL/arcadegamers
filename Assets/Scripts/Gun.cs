@@ -18,7 +18,7 @@ public class Gun : MonoBehaviour
     private void Awake()
     {
         ST = this;
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
     }
 
     public void Shoot()
@@ -27,6 +27,7 @@ public class Gun : MonoBehaviour
         GameObject spawnBullet = Instantiate(bullet, bulletSpawnPos.position, bullet.transform.rotation);
         spawnBullet.transform.parent = bulletsParent.transform;
         spawnBullet.GetComponent<Bullet>().Aim = aim;
+        Audio.ST.PlaySound(Sounds.gun);
         StartCoroutine(Coroutine());
     }
 
@@ -34,6 +35,8 @@ public class Gun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0) && isCanShoot)
             Shoot();
+        
+        transform.LookAt(new Vector3(aim.position.x, aim.position.y,1000), Vector3.back);
     }
 
     private IEnumerator Coroutine ()

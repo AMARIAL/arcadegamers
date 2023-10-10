@@ -1,38 +1,33 @@
 using UnityEngine;
 public enum Sounds
 {
-    intro,
-    box,
-    start,
-    take,
-    hit,
-    speed
+    gun,
+    jump,
+    egg,
+    timer
 }
 public enum Music
 {
-    metal,
-    game
+    game,
+    end
 }
 public class Audio : MonoBehaviour
 {
-    public static Audio ST  {get; private set;} // Audio.ST (Singltone)
+    public static Audio ST  {get; private set;}
     
     public bool MusicOn = true;
-    public bool SoundOn = true;
-    
+
     public AudioSource musicAudio;
     
-    [SerializeField] private AudioSource intro;
-    [SerializeField] private AudioSource box;
-    [SerializeField] private AudioSource start;
-    [SerializeField] private AudioSource take;
-    [SerializeField] private AudioSource hit;
-    [SerializeField] private AudioSource speed;
+    [SerializeField] private AudioSource gun;
+    [SerializeField] private AudioSource jump;
+    [SerializeField] private AudioSource egg;
+    [SerializeField] private AudioSource timer;
 
-    
-    [SerializeField] private AudioClip metal;
+
     [SerializeField] private AudioClip game;
-    
+    [SerializeField] private AudioClip end;
+
     private void Awake()
     {
         ST = this;
@@ -40,30 +35,15 @@ public class Audio : MonoBehaviour
     }
     private void Start()
     {
-        if (PlayerPrefs.HasKey("MUSIC") && PlayerPrefs.GetString("MUSIC") == "OFF")
-            MusicOn = false;
-        if (PlayerPrefs.HasKey("SOUND") && PlayerPrefs.GetString("SOUND") == "OFF")
-            SoundOn = false;
-        
         if (!MusicOn)
         {
             musicAudio.Stop();
         }
     }
     
-    public void SoundOnOff(bool isOn = true)
-    {
-        SoundOn = isOn;
-        PlayerPrefs.SetString("SOUND", SoundOn ? "ON" : "OFF");
-        PlayerPrefs.Save();
-    }
-    
     public void MusicOnOff(bool isOn = true)
     {
         MusicOn = isOn;
-        
-        PlayerPrefs.SetString("MUSIC", MusicOn ? "ON" : "OFF");
-        PlayerPrefs.Save();
         
         if (MusicOn)
             musicAudio.Play();
@@ -74,25 +54,27 @@ public class Audio : MonoBehaviour
     {
         switch (music)
         {
-            case Music.metal: musicAudio.clip = metal; break;
             case Music.game: musicAudio.clip = game; break;
+            case Music.end: musicAudio.clip = end;
+                musicAudio.loop = false; break;
         }
         if(MusicOn)
             musicAudio.Play();
     }
+
+    public void StopSound()
+    {
+        timer.Stop();
+    }
+
     public void PlaySound(Sounds sound)
     {
-        if (!SoundOn) 
-            return;
-        
         switch (sound)
         {
-            case Sounds.intro: intro.Play(); break;
-            case Sounds.box: box.Play(); break;
-            case Sounds.start: start.Play(); break;
-            case Sounds.take: take.Play(); break;
-            case Sounds.hit: hit.Play(); break;
-            case Sounds.speed: speed.Play(); break;
+            case Sounds.gun: gun.Play(); break;
+            case Sounds.jump: jump.Play(); break;
+            case Sounds.egg: egg.Play(); break;
+            case Sounds.timer: timer.Play();break;
         }
     }
 }

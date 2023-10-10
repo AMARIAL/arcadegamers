@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Trampoline : MonoBehaviour
@@ -38,4 +39,13 @@ public class Trampoline : MonoBehaviour
         rigidboby.velocity = direction;
         
     }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Egg"))
+        {
+            Audio.ST.PlaySound(Sounds.jump);
+        }
+    }
+    
 }
